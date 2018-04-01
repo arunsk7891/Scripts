@@ -1,0 +1,74 @@
+arunsk7891@arun-HP-Ubuntu:~/scripts$ clear
+
+arunsk7891@arun-HP-Ubuntu:~/scripts$ ssh-keygen -t rsa -b 4096 -C "arunsk7891@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/arunsk7891/.ssh/id_rsa): 
+Created directory '/home/arunsk7891/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Saving key "/home/arunsk7891/.ssh/id_rsa" failed: passphrase is too short (minimum five characters)
+arunsk7891@arun-HP-Ubuntu:~/scripts$ ssh-keygen -t rsa -b 4096 -C "arunsk7891@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/arunsk7891/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/arunsk7891/.ssh/id_rsa.
+Your public key has been saved in /home/arunsk7891/.ssh/id_rsa.pub.
+The key fingerprint is:
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXX
+X
+
+
+X
+X
+
+
+arunsk7891@arun-HP-Ubuntu:~/scripts$ eval "$(ssh-agent -s)"
+Agent pid 11788
+arunsk7891@arun-HP-Ubuntu:~/scripts$ ssh-add ~/.ssh/id_rsa
+Enter passphrase for /home/arunsk7891/.ssh/id_rsa: 
+Identity added: /home/arunsk7891/.ssh/id_rsa (/home/arunsk7891/.ssh/id_rsa)
+arunsk7891@arun-HP-Ubuntu:~/scripts$ sudo apt-get install xclip
+[sudo] password for arunsk7891: 
+Sorry, try again.
+[sudo] password for arunsk7891: 
+Sorry, try again.
+[sudo] password for arunsk7891: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  xclip
+0 upgraded, 1 newly installed, 0 to remove and 66 not upgraded.
+Need to get 17.0 kB of archives.
+After this operation, 72.7 kB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu xenial/universe amd64 xclip amd64 0.12+svn84-4 [17.0 kB]
+Fetched 17.0 kB in 3s (5,556 B/s)
+Selecting previously unselected package xclip.
+(Reading database ... 213150 files and directories currently installed.)
+Preparing to unpack .../xclip_0.12+svn84-4_amd64.deb ...
+Unpacking xclip (0.12+svn84-4) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up xclip (0.12+svn84-4) ...
+arunsk7891@arun-HP-Ubuntu:~/scripts$ xclip -sel clip < ~/.ssh/id_rsa.pub
+arunsk7891@arun-HP-Ubuntu:~/scripts$ ssh -T git@github.com
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is ********************************************************
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+Hi arunsk7891! You've successfully authenticated, but GitHub does not provide shell access.
+arunsk7891@arun-HP-Ubuntu:~/scripts$ ssh-keygen -p
+Enter file in which the key is (/home/arunsk7891/.ssh/id_rsa): 
+Enter old passphrase: 
+Enter new passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved with the new passphrase.
+arunsk7891@arun-HP-Ubuntu:~/scripts$ 
+
+# Scripts
